@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Minimalist Ýazgy Barlagy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <div class="container">
+        <div class="top-bar">
+            <button class="auth-btn">👤 Giriş</button>
+            <div class="stats-summary">
+                Iň Oňat: <span id="best-wpm">0</span> D/M
+            </div>
+        </div>
+
+        <div class="settings-menu">
+            <div class="setting-group">
+                <span class="setting-label">Wagt:</span>
+                <span class="setting-options time-options">
+                    <span class="setting-option active" data-time="15">15</span>
+                    <span class="setting-option" data-time="30">30</span>
+                    <span class="setting-option" data-time="60">60</span>
+                </span>
+            </div>
+            
+            <div class="setting-group">
+                <span class="setting-label">Kynçylyk:</span>
+                <span class="setting-options difficulty-options">
+                    <span class="setting-option active" data-difficulty="short">Gysga</span>
+                    <span class="setting-option" data-difficulty="long">Uzyn</span>
+                </span>
+            </div>
+            
+            <div class="setting-group">
+                <span class="setting-label">Tema:</span>
+                <span class="setting-options theme-options">
+                    <span class="setting-option active" data-theme="dark">Garaňky</span>
+                    <span class="setting-option" data-theme="light">Ýagty</span>
+                </span>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <div class="logo">ýazgy barlagy</div>
+                <div class="timer-display">
+                    <span class="timer">30</span><span class="time-unit">s</span>
+                </div>
+            </div>
+
+            <div class="typing-text">
+                <p id="paragraph"></p>
+                <div class="cursor"></div>
+            </div>
+
+            <input type="text" class="input-field" autofocus>
+
+            <div class="statistics-box" style="display: none;">
+                <h3>Statistika</h3>
+                <div class="stat-details">
+                    <div>Ortaça D/M: <span id="avg-wpm">0</span></div>
+                    <div>Iň Oňat D/M: <span id="max-wpm">0</span></div>
+                    <div>Synaglaryň sany: <span id="total-tests">0</span></div>
+                </div>
+            </div>
+
+            <div class="result-box">
+                <div class="wpm-score">
+                    <span class="score-value">0</span> <span class="score-label">D/M</span>
+                </div>
+                <div class="result-details">
+                    <div>Takyklyk: <span class="accuracy">0</span>%</div>
+                    <div>Ýalňyşlar: <span class="mistakes-count">0</span></div>
+                </div>
+            </div>
+
+            <button onclick="resetGame()" title="Täzeden başlamak üçin Tab + Enter bas ýa-da iki gezek bas">
+                Täzeden Başla (Tab + Enter ýa-da iki gezek bas)
+            </button>
+        </div>
+    </div>
+
+    <audio id="keypress-sound" src="key.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
